@@ -22,7 +22,7 @@ if uploaded_file is not None:
     selected_value = st.selectbox("Select value", unique_values)
 
     filtered_df = df[df[selected_column]==selected_value]
-    df.write(filtered_df)
+    st.write(filtered_df)
 
     st.subheader("Plot Data")
     x_column= st.selectbox("Select x-axis column", columns)
