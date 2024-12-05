@@ -17,7 +17,8 @@ if uploaded_file is not None:
     st.subheader("Filter Data")
     columns= df.columns.tolist()
     selected_column = st.selectbox("Select a column to filter by.", columns)
-    unique_values = df(selected_column).unique()
+    unique_values = df[selected_column].unique()
+
     selected_value = st.selectbox("Select value", unique_values)
 
     filtered_df = df[df[selected_column]==selected_value]
